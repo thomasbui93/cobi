@@ -1,0 +1,36 @@
+version: '3.1'
+
+services:
+  webadmin:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./webadmin/app:/var/www/app
+      - ./nginx-config/site.conf:/etc/nginx/conf.d/default.conf
+    links:
+      - redis
+  fpm:
+    build:
+      context: ./fpm
+    restart: always
+    volumes:
+      - ./webadmin/app:/var/www/app
+    links:
+      - postgre
+      - redis    
+  postgre:
+    image: postgres:10.2
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      MYSQL_DATABASE: cobi
+      MYSQL_USER: cobi
+      MYSQL_PASSWORD: cobi
+      MYSQL_ROOT_PASSWORD: cobi  
+  redis:
+    image: redis:4.0-alpine
+    ports:
+      - 16379:6379
+  
