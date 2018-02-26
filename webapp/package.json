@@ -1,33 +1,19 @@
 {
-  "name": "cobi-webapp",
-  "version": "0.0.1",
-  "description": "Cobi webapp",
-  "main": "index.js",
+  "name": "docker-webapp",
+  "version": "1.0.0",
+  "description": "Cobi Webapp",
+  "author": "Khoa Bui <thomasbui93@gmail.com>",
+  "main": "app/server.js",
   "scripts": {
-    "start": "node ./dist/index.js",
-    "build": "tsc",
-    "dev": "tsc --watch & nodemon dist",
-    "test": "tsc && mocha dist/**/*.spec.js",
-    "lint": "eslint src --ext ts",
-    "tsc": "tsc"
+    "start": "node ./app/server.js",
+    "dev": "nodemon ./app/server.js",
+    "shell": "node ./app/shell.js"
   },
-  "author": "thomasbui93@gmail.com",
-  "license": "MIT",
   "dependencies": {
-    "@types/node": "^9.4.6",
-    "errorhandler": "^1.5.0",
-    "express": "^4.16.2"
+    "express": "^4.16.1",
+    "shelljs": "^0.8.1"
   },
   "devDependencies": {
-    "@types/mocha": "^2.2.48",
-    "eslint": "^4.18.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-promise": "^3.6.0",
-    "mocha": "^5.0.1",
-    "nodemon": "^1.15.1",
-    "tsc": "^1.20150623.0",
-    "typescript": "^2.7.2",
-    "typescript-eslint-parser": "^14.0.0"
+    "nodemon": "^1.15.1"
   }
 }
