@@ -34,6 +34,7 @@ services:
       context: ./webapp
     volumes:
       - ./webapp/app:/usr/src/app
+      - ./webapp/dist:/usr/src/dist
     depends_on:
       - redis
       - postgre
