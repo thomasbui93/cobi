@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.3'
 
 services:
   postgre:
@@ -8,9 +8,7 @@ services:
       MYSQL_PASSWORD: cobi
       MYSQL_ROOT_PASSWORD: cobi
   webapp:
-    build:
-      dockerfile: ./webapp/Dockerfile-dev
+    volumes:
+      - ./webapp/dist:/usr/src/dist
     environment:
-      - ENV: development 
-
-  
+      NODE_ENV: development

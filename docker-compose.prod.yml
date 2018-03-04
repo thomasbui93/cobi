@@ -1,12 +1,6 @@
-version: '3.1'
+version: '3.3'
 
-services:   
-  postgre:
-    environment:
-      MYSQL_DATABASE: cobi
-      MYSQL_USER: cobi
-      MYSQL_PASSWORD: cobi
-      MYSQL_ROOT_PASSWORD: cobi  
+services:
   webapp:
     environment:
-      - ENV: production
+      NODE_ENV: production

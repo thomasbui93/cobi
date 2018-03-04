@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.3'
 
 services:
   webadmin:
@@ -28,12 +28,19 @@ services:
   redis:
     image: redis:4.0-alpine
     ports:
-      - 16379:6379
+      - "16379:6379"
   webapp:
     build:
       context: ./webapp
-    restart: always
-    links:
-      - postgre
+    volumes:
+      - ./webapp/app:/usr/src/app
+    depends_on:
       - redis
-  
+      - postgre
+      - fpm
+    links:
+      - redis
+      - postgre
+    ports:
+      - "3000:8000"   
+
