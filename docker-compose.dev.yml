@@ -8,5 +8,7 @@ services:
       MYSQL_PASSWORD: cobi
       MYSQL_ROOT_PASSWORD: cobi
   webapp:
+    volumes:
+      - ./webapp/dist:/usr/src/dist
     environment:
       NODE_ENV: development
