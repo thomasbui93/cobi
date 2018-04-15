@@ -34,6 +34,8 @@ services:
       context: ./webapp
     volumes:
       - ./webapp/app:/usr/src/app
+      - ./webapp/pages:/usr/src/pages
+      - ./webapp/next.config.js:/usr/src/next.config.js
     depends_on:
       - redis
       - postgre

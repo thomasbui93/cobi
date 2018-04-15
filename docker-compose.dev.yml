@@ -8,6 +8,9 @@ services:
       MYSQL_PASSWORD: cobi
       MYSQL_ROOT_PASSWORD: cobi
   webapp:
+    build:
+      context: ./webapp
+      dockerfile: 'Dockerfile.development'
     volumes:
       - ./webapp/dist:/usr/src/dist
     environment:
