@@ -1,18 +1,18 @@
-const withTypescript = require('@zeit/next-typescript')
 const withSass = require('@zeit/next-sass')
 const routes = require('./routes.json');
+const bourbon = require('node-bourbon');
+const neat = require('node-neat');
 
-module.exports = withTypescript(withSass({
+module.exports = withSass({
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 1,
     localIdentName: "[local]___[hash:base64:5]",
   },
-  webpack(config, options) {
-    // Further custom configuration here
-    return config
+  sassLoaderOptions: {
+    includePaths: [bourbon.includePaths, neat.includePaths]
   },
   exportPathMap: () => {
     return routes;
   }
-}));
+});

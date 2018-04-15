@@ -1,0 +1,14 @@
+.k-hidden {
+  display: none!important;
+}
+
+.k-disappear {
+  display: none;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.k-text-hidden {
+  @include hide-text;
+}

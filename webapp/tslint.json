@@ -16,13 +16,13 @@
       ],
       "no-var-keyword": true,
       "quotemark": [
-          true,
+          false,
           "double",
           "avoid-escape"
       ],
       "semicolon": [
           true,
-          "always",
+          "never",
           "ignore-bound-class-methods"
       ],
       "whitespace": [

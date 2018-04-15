@@ -35,6 +35,7 @@ services:
     volumes:
       - ./webapp/app:/usr/src/app
       - ./webapp/pages:/usr/src/pages
+      - ./webapp/components:/usr/src/components
       - ./webapp/next.config.js:/usr/src/next.config.js
     depends_on:
       - redis

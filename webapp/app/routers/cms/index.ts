@@ -1,11 +1,11 @@
-import { Router } from "express";
+import { Router } from "express"
 
-const router = Router();
+const router = Router()
 
-import entry from "./entry";
-import blog from "./blog";
+import entry from "./entry"
+import blog from "./blog"
 
-router.get("/", entry);
-router.get("/:blogId", blog);
+router.get("/", entry)
+router.get("/:blogId", blog)
 
-export default router;
+export default router
