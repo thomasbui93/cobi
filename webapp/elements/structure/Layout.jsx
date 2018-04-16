@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import Head from 'next/head'
-
-import './../styles/app.scss'
-import Footer from './Footer'
-import Header from './Header'
+import React from 'react'
+import './../../styles/app.scss'
+import Footer from './../global/Footer'
+import Header from './../global/Header'
 
 export default ({ children, title = 'Cobi Application' }) => (
   <div>

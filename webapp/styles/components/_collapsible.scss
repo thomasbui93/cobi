@@ -1,0 +1,11 @@
+.k-collapsible {
+  position: relative;
+
+  &__title {
+    cursor: pointer;
+  }
+  
+  &__content {
+    overflow: hidden;
+  }
+}
