@@ -1,0 +1,25 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+
+  &__block {
+    min-width: 320px;
+  }
+}
+
+.k-collapsible {
+  &__title {
+    font-weight: bold;
+  }
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column
+}
+
+@include from($sm) {
+  .footer {
+    flex-direction: row;
+  }
+}

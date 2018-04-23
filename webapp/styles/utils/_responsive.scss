@@ -1,0 +1,7 @@
+.mobile-only {
+  display: block;
+  @include from($sm) {
+    display: none;
+  }
+}
+

@@ -4,6 +4,6 @@ const neat = require('node-neat');
 
 module.exports = withSass({
   sassLoaderOptions: {
-    includePaths: [bourbon.includePaths, neat.includePaths]
+    includePaths: [bourbon.includePaths, neat.includePaths, './node_modules/bulma']
   }
 });
