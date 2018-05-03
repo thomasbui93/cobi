@@ -1,14 +1,8 @@
 version: '3.3'
 
 services:
-  postgre:
+  core_database:
     environment:
-      MYSQL_DATABASE: cobi
-      MYSQL_USER: cobi
-      MYSQL_PASSWORD: cobi
-      MYSQL_ROOT_PASSWORD: cobi
-  webapp:
-    volumes:
-      - ./webapp/dist:/usr/src/dist
-    environment:
-      NODE_ENV: development
+      POSTGRES_DB: cobi
+      POSTGRES_USER: cobi
+      POSTGRES_PASSWORD: cobi

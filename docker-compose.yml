@@ -10,7 +10,7 @@ services:
       - ./nginx-config/site.conf:/etc/nginx/conf.d/default.conf
     links:
       - redis
-      - postgre
+      - core_database
   fpm:
     build:
       context: ./fpm
@@ -18,29 +18,17 @@ services:
     volumes:
       - ./webadmin/app:/var/www/app
     links:
-      - postgre
+      - core_database
       - redis    
-  postgre:
+  core_database:
+    container_name: core_database
     image: postgres:10.2
     restart: always
     ports:
       - "5432:5432"  
   redis:
+    container_name: redis
     image: redis:4.0-alpine
     ports:
-      - "16379:6379"
-  webapp:
-    build:
-      context: ./webapp
-    volumes:
-      - ./webapp/app:/usr/src/app
-    depends_on:
-      - redis
-      - postgre
-      - fpm
-    links:
-      - redis
-      - postgre
-    ports:
-      - "3000:8000"   
+      - "6379:6379"  
 
